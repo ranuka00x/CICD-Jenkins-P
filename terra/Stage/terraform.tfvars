@@ -1,0 +1,8 @@
+project_id     = "devtest1-448304"
+region         = "us-central1"
+zone           = "us-central1-a"
+instance_name  = "my-vm-instance"
+machine_type   = "n1-standard-2"
+disk_image     = "ubuntu-os-cloud/ubuntu-2204-lts"
+network        = "default"
+ssh_key_path   = "C:\\Users\\SAS\\.ssh\\id_rsa.pub"
