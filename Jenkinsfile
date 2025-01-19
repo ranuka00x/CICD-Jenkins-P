@@ -1,10 +1,11 @@
 pipeline {
 	agent any
-
+	
+	
 	stages {
 		stage('Checkout Github'){
 			steps {
-			git branch: 'main', credentialsId: 'GitOps', url: 'https://github.com/ranuka00x/CICD-Jenkins-P.git'
+			
 			}
 		}		
 		stage('Install node dependencies'){
@@ -15,7 +16,6 @@ pipeline {
 		stage('Build Docker Image'){
 			steps {
 				
-				}
 			}
 		}
 		stage('Trivy Scan'){
