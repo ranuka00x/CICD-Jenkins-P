@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'main', 
                     credentialsId: 'GitOps-token-GitHub', 
-                    url: 'https://github.com/iQuantC/Jenkins-ArgoCD-GitOps.git'
+                    url: 'https://github.com/ranuka00x/CICD-Jenkins-P.git'
             }
         }
 
