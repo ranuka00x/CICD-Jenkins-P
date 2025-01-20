@@ -3,6 +3,9 @@ pipeline {
     tools {
         nodejs 'NodeJs'
     }
+    environment {
+        DOCKER_HUB_REPO = 'kadawara/nodecicd'
+    }
     stages {
         stage('Checkout Github') {
             steps {
@@ -22,6 +25,8 @@ pipeline {
             steps {
                 script {
                     echo 'building docker image...'
+                    docker.build("${DOCKER_HUB_REPO}:lts")
+                    
                 }
             }
         }
