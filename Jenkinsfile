@@ -5,6 +5,8 @@ pipeline {
     }
     environment {
         DOCKER_HUB_REPO = 'kadawara/nodecicd'
+        DOCKER_HUB_CRED = 'jemkis2'
+
     }
     stages {
         stage('Checkout Github') {
@@ -41,6 +43,9 @@ pipeline {
             steps {
                 script {
                     echo 'pushing docker image to DockerHub...'
+                    docker.withRegistry('https://registry.hub.docker.com', "${DOCKER_HUB_CRED}") {
+                        docker.image("${DOCKER_HUB_REPO}:lts").push('latest')
+                    }
                 }
             }
         }
